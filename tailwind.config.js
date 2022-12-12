@@ -22,8 +22,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      'azeret': ['Azeret Mono', 'monospace',]
-    }
+      azeret: ['Azeret Mono', 'monospace'],
+    },
   },
   plugins: [],
 }
