@@ -1,3 +1,5 @@
+import Title from '@/components/Title'
+
 const Process: React.FC = () => {
   const info = [
     {
@@ -23,10 +25,7 @@ const Process: React.FC = () => {
   ]
   return (
     <div className="bg-dark">
-      <h2 className="mb-4 pt-12 text-center text-3xl text-white lg:pt-20">
-        預期上課流程
-      </h2>
-      <div className="mx-auto mb-12 w-[60px] border-b-4 border-secondary"></div>
+      <Title title={'預期上課流程'} />
       <ul className="container flex cursor-default flex-col  items-center justify-around py-6 text-white lg:flex-row">
         {info.map((item, index) => {
           return (
