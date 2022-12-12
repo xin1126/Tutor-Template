@@ -8,6 +8,7 @@ module.exports = {
         primary: '#2D2D2D',
         secondary: '#62DB54',
         gradual: '#09ACF5',
+        dark: '#202020',
       },
     },
     container: {
