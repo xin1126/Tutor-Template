@@ -21,6 +21,9 @@ module.exports = {
         DEFAULT: '12px',
       },
     },
+    fontFamily: {
+      'azeret': ['Azeret Mono', 'monospace',]
+    }
   },
   plugins: [],
 }
