@@ -48,7 +48,7 @@ const Header: React.FC = () => {
               課程介紹
             </NavLink>
           </li>
-          <li className="mb-6 flex items-center justify-center md:mb-0">
+          <li className="flex items-center justify-center md:mb-0">
             <NavLink to="/" className="flex items-center hover:text-slate-300">
               <span className="material-icons mr-1">account_circle</span>登入
             </NavLink>

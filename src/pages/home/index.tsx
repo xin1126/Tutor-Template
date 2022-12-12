@@ -1,7 +1,7 @@
-import logo from '@/assets/logo.svg'
+import Banner from './components/Banner'
 
 const Home: React.FC = () => {
-  return <div className="flex flex-col items-center text-5xl"></div>
+  return <Banner />
 }
 
 export default Home
