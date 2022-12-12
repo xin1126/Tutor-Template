@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    html {
+  html {
     font-family: 'Squada One', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", Arial, system-ui, cursive, sans-serif;
   }
 }

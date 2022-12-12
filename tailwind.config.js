@@ -9,6 +9,7 @@ module.exports = {
         secondary: '#62DB54',
         gradual: '#09ACF5',
         dark: '#202020',
+        gray: '#969696',
       },
     },
     container: {
