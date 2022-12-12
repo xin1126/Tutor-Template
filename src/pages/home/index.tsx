@@ -1,6 +1,7 @@
 import Banner from './components/Banner'
 import Information from './components/Information'
 import Process from './components/Process'
+import CourseCategory from './components/CourseCategory'
 
 const Home: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const Home: React.FC = () => {
       <Banner />
       <Information />
       <Process />
+      <CourseCategory />
     </>
   )
 }
