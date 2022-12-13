@@ -26,11 +26,11 @@ const Process: React.FC = () => {
   return (
     <div className="bg-dark">
       <Title title={'預期上課流程'} />
-      <ul className="container flex cursor-default flex-col  items-center justify-around py-6 text-white lg:flex-row">
+      <ul className="container grid cursor-default gap-4 py-6 text-white sm:grid-cols-2 lg:flex-row xl:grid-cols-4 xl:gap-6">
         {info.map((item, index) => {
           return (
             <li
-              className="relative mb-12 w-full rounded-xl border border-white py-12 px-3 pl-12 text-lg lg:mb-20 lg:ml-6 lg:w-[305px] lg:bg-transparent"
+              className="relative mb-12 w-full rounded-xl border border-white py-12 px-3 pl-12 text-lg lg:bg-transparent"
               key={item.title}
               data-aos="flip-left"
               data-aos-delay={index * 200}
