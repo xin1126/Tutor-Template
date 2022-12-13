@@ -23,7 +23,7 @@ const Information: React.FC = () => {
     <div className="bg-primary">
       <ul className="container flex cursor-default flex-col  items-center justify-around py-6 text-gray lg:flex-row lg:py-20">
         <li
-          className="w-[305px] pb-6 text-center text-3xl font-medium text-white lg:mt-10 lg:py-12 lg:text-start"
+          className="w-[305px] pb-6 text-center text-2xl font-medium text-white md:text-3xl lg:mt-10 lg:py-12 lg:text-start"
           data-aos="fade-right"
           data-aos-delay="400"
         >
