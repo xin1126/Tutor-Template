@@ -48,7 +48,7 @@ const PopularCourses: React.FC = () => {
   return (
     <div className="bg-dark pb-10 sm:pb-20">
       <Title title={'熱門推薦課程'} />
-      <ul className="container grid cursor-default items-center justify-around gap-4 text-white sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
+      <ul className="container grid cursor-default gap-4 text-white sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
         {courses.map((item, index) => {
           return (
             <li

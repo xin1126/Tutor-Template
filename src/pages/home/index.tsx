@@ -4,6 +4,7 @@ import Process from './components/Process'
 import CourseCategory from './components/CourseCategory'
 import PopularCourses from './components/PopularCourses'
 import LearningMethod from './components/LearningMethod'
+import ArticleSharing from './components/ArticleSharing'
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
       <CourseCategory />
       <PopularCourses />
       <LearningMethod />
+      <ArticleSharing />
     </>
   )
 }
