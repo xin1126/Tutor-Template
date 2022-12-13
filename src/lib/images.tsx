@@ -3,7 +3,6 @@ import teacher02 from '@/assets/images/teacher02.jpg'
 import teacher03 from '@/assets/images/teacher03.jpg'
 import teacher04 from '@/assets/images/teacher04.jpg'
 import teacher05 from '@/assets/images/teacher05.jpg'
-import teacher06 from '@/assets/images/teacher06.jpg'
 
 import student01 from '@/assets/images/student01.jpg'
 import student02 from '@/assets/images/student02.jpg'
@@ -25,7 +24,6 @@ const images = {
   teacher03,
   teacher04,
   teacher05,
-  teacher06,
 
   student01,
   student02,
