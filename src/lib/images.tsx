@@ -18,6 +18,11 @@ import info02 from '@/assets/images/info02.jpg'
 import info03 from '@/assets/images/info03.jpg'
 import info04 from '@/assets/images/info04.jpg'
 
+import share01 from '@/assets/images/share01.jpg'
+import share02 from '@/assets/images/share02.jpg'
+import share03 from '@/assets/images/share03.jpg'
+import share04 from '@/assets/images/share04.jpg'
+
 const images = {
   teacher01,
   teacher02,
@@ -38,6 +43,11 @@ const images = {
   info02,
   info03,
   info04,
+
+  share01,
+  share02,
+  share03,
+  share04,
 }
 
 export default images

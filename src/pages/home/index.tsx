@@ -5,6 +5,7 @@ import CourseCategory from './components/CourseCategory'
 import PopularCourses from './components/PopularCourses'
 import LearningMethod from './components/LearningMethod'
 import ArticleSharing from './components/ArticleSharing'
+import StudentsShare from './components/StudentsShare'
 
 const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
       <PopularCourses />
       <LearningMethod />
       <ArticleSharing />
+      <StudentsShare />
     </>
   )
 }
