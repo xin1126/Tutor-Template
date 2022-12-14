@@ -35,7 +35,7 @@ const Process: React.FC = () => {
               key={item.title}
               data-aos="flip-left"
               data-aos-delay={index * (device.desktop() ? 200 : 100)}
-              data-aos-anchor-placement={device.desktop() && 'center-center'}
+              data-aos-anchor-placement={device.desktop() && 'bottom-bottom'}
             >
               <p className="mb-4 text-2xl font-bold">{item.title}</p>
               <p>{item.contentFirst}</p>

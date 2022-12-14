@@ -51,7 +51,7 @@ const LearningMethod: React.FC = () => {
                   data-aos="fade-top"
                   data-aos-delay={index * 200}
                   data-aos-anchor-placement={
-                    device.desktop() && 'center-center'
+                    device.desktop() && 'bottom-bottom'
                   }
                   className="text-center xl:ml-12 xl:text-start"
                 >
