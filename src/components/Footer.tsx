@@ -1,8 +1,7 @@
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-500 py-3 text-center text-white">
-      React Hook + React Router + Vite + TypeScript + TailwindCSS + React
-      Toolkit + ESLint
+    <footer className="bg-dark py-6 text-center text-gray">
+      Coding Home © 2022 All Rights Reserved
     </footer>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { HashRouter, useRoutes } from 'react-router-dom'
 import routes from './routes'
-// import Footer from '@/components/Footer'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -23,7 +23,7 @@ const App: React.FC = () => {
     <HashRouter>
       <Header />
       <Element />
-      {/* <Footer /> */}
+      <Footer />
     </HashRouter>
   )
 }
