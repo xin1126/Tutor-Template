@@ -4,16 +4,19 @@ import mobileLogo from '@/assets/images/logo2.svg'
 
 const Header: React.FC = () => {
   const [menuStatus, setMenuStatus] = useState(false)
+  const navigate = useNavigate()
 
   const handleMenu = () => {
     const newStatus = !menuStatus
     setMenuStatus(newStatus)
   }
   return (
-    <div className="relative bg-primary">
-      <div className="container flex items-center justify-between">
-        <img className="hidden w-40 md:block" src={pcLogo} alt="logo" />
-        <img className="w-10 md:hidden" src={mobileLogo} alt="logo" />
+    <div className="fixed z-20 w-full bg-primary">
+      <div className="container relative flex items-center justify-between bg-primary">
+        <div className="cursor-pointer" onClick={() => navigate('/')}>
+          <img className="hidden w-48 md:block" src={pcLogo} alt="logo" />
+          <img className="w-10 py-6 md:hidden" src={mobileLogo} alt="logo" />
+        </div>
         <div className="cursor-pointer py-7 md:hidden" onClick={handleMenu}>
           <div className="mb-1 w-[20px] border-b-2 border-secondary"></div>
           <div className="w-[20px] border-b-2 border-secondary"></div>
@@ -31,25 +34,38 @@ const Header: React.FC = () => {
         font-bold 
         text-white 
         transition-all 
+        duration-700
         md:static
         md:z-0
         md:flex
         md:py-8
-        ${menuStatus ? 'top-[60px]' : '!top-[-200px]'}
+        ${menuStatus ? 'top-[85px]' : '!top-[-200px]'}
         `}
         >
           <li className="mb-6 text-center md:mr-12 md:mb-0">
-            <NavLink to="/" className="hover:text-slate-300">
+            <NavLink
+              to="/"
+              className="hover:text-slate-300"
+              onClick={() => setMenuStatus(false)}
+            >
               首頁
             </NavLink>
           </li>
           <li className="mb-6 text-center md:mr-12 md:mb-0">
-            <NavLink to="/" className="hover:text-slate-300">
+            <NavLink
+              to="/courseIntroduction"
+              className="hover:text-slate-300"
+              onClick={() => setMenuStatus(false)}
+            >
               課程介紹
             </NavLink>
           </li>
           <li className="flex items-center justify-center md:mb-0">
-            <NavLink to="/" className="flex items-center hover:text-slate-300">
+            <NavLink
+              to="/"
+              className="flex items-center hover:text-slate-300"
+              onClick={() => setMenuStatus(false)}
+            >
               <span className="material-icons mr-1">account_circle</span>登入
             </NavLink>
           </li>
