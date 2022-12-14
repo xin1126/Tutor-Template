@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import pcLogo from '@/assets/images/logo.svg'
 import mobileLogo from '@/assets/images/logo2.svg'
 
@@ -10,6 +10,11 @@ const Header: React.FC = () => {
     const newStatus = !menuStatus
     setMenuStatus(newStatus)
   }
+
+  const location = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
   return (
     <div className="fixed z-20 w-full bg-primary">
       <div className="container relative flex items-center justify-between bg-primary">
