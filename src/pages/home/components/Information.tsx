@@ -1,3 +1,5 @@
+import device from 'current-device'
+
 const Information: React.FC = () => {
   const info = [
     {
@@ -35,7 +37,7 @@ const Information: React.FC = () => {
           return (
             <li
               data-aos="fade-up"
-              data-aos-delay="200"
+              data-aos-anchor-placement={device.desktop() && 'center-center'}
               className="group mb-6 w-full rounded-xl border border-transparent bg-dark py-12 px-3 text-center text-lg hover:border-secondary hover:bg-dark lg:mb-0 lg:w-[305px] lg:bg-transparent"
               key={item.title}
             >

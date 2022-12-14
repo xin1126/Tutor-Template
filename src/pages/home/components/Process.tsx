@@ -1,4 +1,5 @@
 import Title from '@/components/Title'
+import device from 'current-device'
 
 const Process: React.FC = () => {
   const info = [
@@ -33,7 +34,8 @@ const Process: React.FC = () => {
               className="relative mb-12 w-full rounded-xl border border-white py-12 px-3 pl-12 text-lg lg:bg-transparent"
               key={item.title}
               data-aos="flip-left"
-              data-aos-delay={index * 200}
+              data-aos-delay={index * (device.desktop() ? 200 : 100)}
+              data-aos-anchor-placement={device.desktop() && 'center-center'}
             >
               <p className="mb-4 text-2xl font-bold">{item.title}</p>
               <p>{item.contentFirst}</p>

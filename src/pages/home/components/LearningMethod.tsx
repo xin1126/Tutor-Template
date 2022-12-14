@@ -1,4 +1,5 @@
 import images from '@/lib/images'
+import device from 'current-device'
 
 const LearningMethod: React.FC = () => {
   const learning = [
@@ -46,7 +47,14 @@ const LearningMethod: React.FC = () => {
                 className="h-[265px] w-full object-cover  md:h-[400px] xl:h-[615px]"
               />
               <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center bg-black/80 duration-700 group-hover:bg-black/40 xl:justify-start">
-                <div className="text-center xl:ml-12 xl:text-start">
+                <div
+                  data-aos="fade-top"
+                  data-aos-delay={index * 200}
+                  data-aos-anchor-placement={
+                    device.desktop() && 'center-center'
+                  }
+                  className="text-center xl:ml-12 xl:text-start"
+                >
                   <span className=" material-icons mb-2 text-3xl text-gray duration-700 group-hover:text-secondary">
                     {item.icon}
                   </span>
