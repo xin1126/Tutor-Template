@@ -22,7 +22,9 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <Header />
-      <Element />
+      <main className="pt-[85px]">
+        <Element />
+      </main>
       <Footer />
     </HashRouter>
   )
