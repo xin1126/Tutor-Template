@@ -12,11 +12,11 @@ const JoinTutor: React.FC = () => {
             <h2 className="mb-6 text-3xl font-bold md:mb-2">
               加入我們成為導師
             </h2>
-            <p className="mb-6 text-lg md:m-0">
+            <p className="mb-6 text-lg md:m-0 ">
               歡迎各大程式大神加入我們，用知識在世界留下一點影響力。
             </p>
           </div>
-          <Button text="立即預約"></Button>
+          <Button text="立即預約" padding="py-2 px-8"></Button>
         </div>
       </div>
     </div>
