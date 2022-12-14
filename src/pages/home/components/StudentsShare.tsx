@@ -85,88 +85,86 @@ const StudentsShare: React.FC = () => {
   ]
 
   return (
-    <div className="pb-10 sm:pb-20">
-      <div
-        style={{ backgroundImage: `url(${banner})` }}
-        className="h-[900px] w-full bg-cover lg:h-[735px]"
-      >
-        <div>
-          <Title
-            title={'專屬你的學習課程'}
-            subtitle={'超過 3000 位學員得到了程式超能力'}
-          />
-          <div className="relative mx-auto max-w-[600px] cursor-grabbing select-none lg:h-[430px] lg:max-w-[930px]">
-            <div
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="mb-8 lg:mb-0"
+    <div
+      style={{ backgroundImage: `url(${banner})` }}
+      className="w-full bg-cover lg:h-[735px]"
+    >
+      <div className="container bg-black sm:bg-transparent">
+        <Title
+          title={'專屬你的學習課程'}
+          subtitle={'超過 3000 位學員得到了程式超能力'}
+        />
+        <div className="relative mx-auto max-w-[600px] cursor-grabbing select-none lg:h-[430px] lg:max-w-[930px]">
+          <div
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="mb-8 lg:mb-0"
+          >
+            <Swiper
+              loop={true}
+              autoplay={{
+                delay: 1200,
+                disableOnInteraction: false,
+              }}
+              onInit={onInit}
+              speed={1500}
+              key={page}
+              slidesPerView={1}
+              spaceBetween={30}
+              onSlideChange={({ activeIndex }) => setSlideTarget(activeIndex)}
+              onSwiper={(swiper) => swiper.slideTo(page, 0, false)}
             >
-              <Swiper
-                loop={true}
-                autoplay={{
-                  delay: 1200,
-                  disableOnInteraction: false,
-                }}
-                onInit={onInit}
-                speed={1500}
-                key={page}
-                slidesPerView={1}
-                spaceBetween={30}
-                onSlideChange={({ activeIndex }) => setSlideTarget(activeIndex)}
-                onSwiper={(swiper) => swiper.slideTo(page, 0, false)}
-              >
-                {students.map((item) => {
-                  return (
-                    <SwiperSlide
-                      key={item.title}
-                      className="flex h-full flex-col lg:flex-row"
-                    >
-                      <div className="mt-2 mb-14 h-fit rounded-xl border border-gray lg:mb-4 lg:min-w-[525px]">
-                        <img
-                          src={item.share}
-                          alt="share"
-                          className="relative -right-2 bottom-2 h-[380px] w-full rounded-xl"
-                        />
-                      </div>
-                      <div className="relative mt-auto h-fit rounded-lg rounded-bl-none bg-white p-8 lg:-left-6">
-                        <img
-                          className="absolute -top-10 right-8 h-[100px] w-[100px] rounded-full"
-                          src={item.avatar}
-                          alt="avatar"
-                        />
-                        <h2 className="mb-4 text-lg font-bold">{item.title}</h2>
-                        <p>{item.content}</p>
-                      </div>
-                    </SwiperSlide>
-                  )
-                })}
-              </Swiper>
-            </div>
-            <div className="left-0 bottom-2 z-10 flex cursor-pointer items-center justify-center text-center text-white lg:absolute lg:w-1/2">
-              <span
-                className="material-icons mr-4 text-secondary"
-                onClick={() => handlePage('left')}
-              >
-                west
-              </span>
-              {students.map((item, index) => {
+              {students.map((item) => {
                 return (
-                  <div
-                    className={`
-                    mr-2 h-[8px] w-[8px] rounded-full bg-secondary 
-                    ${slideTarget === index + 2 && 'w-[16px]'}`}
+                  <SwiperSlide
                     key={item.title}
-                    onClick={() => setPage(index + 2)}
-                  ></div>
+                    className="flex h-full flex-col lg:flex-row"
+                  >
+                    <div className="mt-2 mb-14 h-fit rounded-xl border border-gray lg:mb-4 lg:min-w-[525px]">
+                      <img
+                        src={item.share}
+                        alt="share"
+                        className="relative -right-2 bottom-2 h-[215px] w-full rounded-xl sm:h-[380px]"
+                      />
+                    </div>
+                    <div className="relative mt-auto h-fit rounded-lg rounded-bl-none bg-white p-8 lg:-left-6">
+                      <img
+                        className="absolute -top-10 right-8 h-[100px] w-[100px] rounded-full"
+                        src={item.avatar}
+                        alt="avatar"
+                      />
+                      <h2 className="mb-4 text-lg font-bold">{item.title}</h2>
+                      <p>{item.content}</p>
+                    </div>
+                  </SwiperSlide>
                 )
               })}
-              <span
-                className="material-icons ml-2 text-secondary"
-                onClick={() => handlePage('right')}
-              >
-                east
-              </span>
-            </div>
+            </Swiper>
+          </div>
+          <div className="left-0 bottom-2 z-10 flex cursor-pointer items-center justify-center text-center text-white lg:absolute lg:w-1/2">
+            <span
+              className="material-icons mr-4 text-secondary"
+              onClick={() => handlePage('left')}
+            >
+              west
+            </span>
+            {students.map((item, index) => {
+              return (
+                <div
+                  className={`
+                    mr-2 h-[8px] w-[8px] rounded-full bg-secondary 
+                    ${slideTarget === index + 2 && 'w-[16px]'}`}
+                  key={item.title}
+                  onClick={() => setPage(index + 2)}
+                ></div>
+              )
+            })}
+            <span
+              className="material-icons ml-2 text-secondary"
+              onClick={() => handlePage('right')}
+            >
+              east
+            </span>
           </div>
         </div>
       </div>
