@@ -6,6 +6,7 @@ import PopularCourses from './components/PopularCourses'
 import LearningMethod from './components/LearningMethod'
 import ArticleSharing from './components/ArticleSharing'
 import StudentsShare from './components/StudentsShare'
+import JoinTutor from './components/JoinTutor'
 
 const Home: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
       <LearningMethod />
       <ArticleSharing />
       <StudentsShare />
+      <JoinTutor />
     </>
   )
 }
