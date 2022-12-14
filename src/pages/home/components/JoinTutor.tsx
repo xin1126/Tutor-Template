@@ -2,7 +2,7 @@ import Button from '@/components/Button'
 
 const JoinTutor: React.FC = () => {
   return (
-    <div className="bg-black py-20 md:pt-0">
+    <div className="bg-black pb-9 pt-14 md:pb-20 md:pt-0">
       <div className="container">
         <div className="mx-auto w-fit items-center rounded-xl bg-dark px-9 py-10 text-center md:flex md:p-12 md:text-start">
           <span className="material-icons text-[100px] text-gray md:mr-12">
