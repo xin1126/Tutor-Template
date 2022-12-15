@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import Button from '@/components/Button'
-import { FatherContext } from '../index'
+import { FatherContext, Context } from '../index'
 
 const CourseCategory: React.FC = () => {
-  const { type, setText } = useContext(FatherContext)
+  const { type, setText } = useContext<Context>(FatherContext)
 
   const category = [
     '所有課程',

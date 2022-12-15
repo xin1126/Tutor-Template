@@ -1,9 +1,9 @@
-import { FatherContext } from '../index'
+import { FatherContext, Context } from '../index'
 import courses from '@/lib/courseData'
 import Button from '@/components/Button'
 
 const Course: React.FC = () => {
-  const { type } = useContext(FatherContext)
+  const { type } = useContext<Context>(FatherContext)
 
   const newCourse = useMemo(() => {
     if (type === '所有課程') return courses
