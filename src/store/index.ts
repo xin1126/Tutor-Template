@@ -1,8 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import countReducer from './count'
+import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux'
+import course from './modules/course'
 
 const store = configureStore({
-  reducer: countReducer,
+  reducer: { course },
 })
 
 export default store
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
+export const useAppDispatch: () => AppDispatch = useDispatch
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector

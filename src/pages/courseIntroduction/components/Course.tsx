@@ -1,9 +1,20 @@
 import { FatherContext, Context } from '../index'
 import courses from '@/lib/courseData'
 import Button from '@/components/Button'
+import { setTeacherName } from '@/store/modules/course'
+import { useAppDispatch } from '@/store/index'
 
 const Course: React.FC = () => {
   const { type } = useContext<Context>(FatherContext)
+
+  const navigate = useNavigate()
+
+  const dispatch = useAppDispatch()
+
+  const jumpCourseDetail = (name: string) => {
+    dispatch(setTeacherName(name))
+    navigate(`/courseDetail`)
+  }
 
   const newCourse = useMemo(() => {
     if (type === '所有課程') return courses
@@ -39,7 +50,11 @@ const Course: React.FC = () => {
                 </div>
                 <div className="flex justify-center md:block">
                   <div className="mb-2 mr-2 md:mr-0">
-                    <Button text="課程介紹" padding="py-2 md:px-12 px-8" />
+                    <Button
+                      text="課程介紹"
+                      padding="py-2 md:px-12 px-8"
+                      onClick={() => jumpCourseDetail(item.name)}
+                    />
                   </div>
                   <div>
                     <Button
