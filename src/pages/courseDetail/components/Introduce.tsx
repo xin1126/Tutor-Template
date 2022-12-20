@@ -76,7 +76,7 @@ const Introduce: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="text-white">
+      <div className="mb-11 text-white xl:mb-0">
         <h2 className="mb-4 text-xl">課程簡介</h2>
         <div className="rounded-xl bg-primary p-6 md:p-8">
           <h3 className="mb-4 border-l-2 border-secondary pl-2">

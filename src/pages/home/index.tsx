@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <Information />
       <Process />
       <CourseCategory />
-      <PopularCourses />
+      <PopularCourses title="熱門推薦課程" />
       <LearningMethod />
       <ArticleSharing />
       <StudentsShare />

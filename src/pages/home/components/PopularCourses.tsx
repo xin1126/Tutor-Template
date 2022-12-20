@@ -1,20 +1,51 @@
 import Title from '@/components/Title'
 import Button from '@/components/Button'
 import courses from '@/lib/courseData'
+import { setTeacherName } from '@/store/modules/course'
+import { useAppDispatch, useAppSelector } from '@/store/index'
 
-const PopularCourses: React.FC = () => {
+interface Props {
+  title: string
+}
+
+const PopularCourses: React.FC<Props> = ({ title }) => {
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+
+  const { teacherName } = useAppSelector((state) => state.course)
+
+  const isPopular = title === '熱門推薦課程'
+
+  const jumpCourseDetail = (name: string) => {
+    if (teacherName === name) return
+
+    dispatch(setTeacherName(name))
+    navigate('/courseDetail')
+  }
+
+  useEffect(() => {
+    if (isPopular) {
+      dispatch(setTeacherName(''))
+    }
+  }, [])
 
   return (
-    <div className="bg-dark pb-10 sm:pb-20">
-      <Title title={'熱門推薦課程'} />
+    <div className={`pb-10 sm:pb-20 ${isPopular ? 'bg-dark' : 'bg-black'}`}>
+      <Title title={title} />
       <ul className="container grid cursor-default gap-4 text-white sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
         {courses.map((item, index) => {
           return (
             <li
-              className="cursor-pointer rounded-xl border border-transparent bg-primary pt-6 pb-4 hover:border-secondary"
+              className={`
+              rounded-xl border border-transparent bg-primary pt-6 pb-4 
+              ${
+                !isPopular && teacherName === item.name
+                  ? 'cursor-not-allowed opacity-60'
+                  : 'cursor-pointer hover:border-secondary'
+              }
+              `}
               key={item.title}
-              onClick={() => navigate('/courseIntroduction')}
+              onClick={() => jumpCourseDetail(item.name)}
             >
               <img
                 className="mx-auto mb-2 h-[100px] w-[100px] rounded-full"
@@ -39,14 +70,16 @@ const PopularCourses: React.FC = () => {
           )
         })}
       </ul>
-      <div className="mt-4 text-center sm:mt-7">
-        <Button
-          text="所有課程列表"
-          padding="py-2 px-8"
-          gradient={true}
-          onClick={() => navigate('/courseIntroduction')}
-        />
-      </div>
+      {isPopular && (
+        <div className="mt-4 text-center sm:mt-7">
+          <Button
+            text="所有課程列表"
+            padding="py-2 px-8"
+            gradient={true}
+            onClick={() => navigate('/courseIntroduction')}
+          />
+        </div>
+      )}
     </div>
   )
 }

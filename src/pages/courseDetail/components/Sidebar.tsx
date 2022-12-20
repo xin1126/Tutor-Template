@@ -22,12 +22,12 @@ const Sidebar: React.FC = () => {
     },
   ]
   return (
-    <div className="relative mx-3 h-fit w-full border border-white bg-primary px-8 py-10 md:min-w-[415px]">
+    <div className="sticky top-[120px] h-fit w-full border border-white bg-primary px-8 py-10 md:mx-3 md:min-w-[415px]">
       <ul>
-        {price.map((item) => {
+        {price.map((item, index) => {
           return (
             <li
-              key={item.money}
+              key={index}
               className="group mb-4 flex cursor-pointer items-center justify-between border-b border-white pb-4 text-white"
             >
               <div className="group-hover:text-secondary">
