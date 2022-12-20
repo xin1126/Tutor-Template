@@ -62,8 +62,10 @@ const PopularCourses: React.FC<Props> = ({ title }) => {
               </div>
               <div className="border-t border-white pt-4 text-center">
                 <p className="text-3xl">
-                  <span className="mr-2 text-sm">{item.time}</span>
-                  {item.price}
+                  <span className="mr-2 text-sm">
+                    {item.customized[0].time}
+                  </span>
+                  {item.customized[0].price}
                 </p>
               </div>
             </li>

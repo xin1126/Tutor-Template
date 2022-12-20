@@ -45,8 +45,8 @@ const Course: React.FC = () => {
               </div>
               <div className="mt-12 border-white text-center md:mt-0">
                 <div className="mb-4 flex items-end justify-center text-3xl md:block">
-                  <p className="mr-2 text-sm">{item.time}</p>
-                  <p>{item.price}</p>
+                  <p className="mr-2 text-sm">{item.customized[0].time}</p>
+                  <p>{item.customized[0].price}</p>
                 </div>
                 <div className="flex justify-center md:block">
                   <div className="mb-2 mr-2 md:mr-0">
