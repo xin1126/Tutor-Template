@@ -1,4 +1,4 @@
-// import Process from './components/Process'
+import Process from './components/Process'
 import Info from './components/Info'
 import Registration from './components/Registration'
 import Payment from './components/Payment'
@@ -31,14 +31,19 @@ const Purchasing: React.FC = () => {
 
   const navigate = useNavigate()
   const { teacherName } = useAppSelector((state) => state.course)
+
   useEffect(() => {
     if (!teacherName) navigate('/')
   })
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [schedule])
+
   return (
     <FatherContext.Provider value={{ schedule, info, setSchedule, setInfo }}>
-      {/* <Process /> */}
-      <div className="flex justify-center bg-black pb-11 xl:pb-[144px] xl:pt-12">
+      <Process />
+      <div className="flex min-h-[calc(100vh_-_260px)] justify-center bg-black pb-11 xl:pb-[144px] xl:pt-12">
         {schedule === 1 && (
           <div className="flex flex-col items-center xl:flex-row">
             <Info />

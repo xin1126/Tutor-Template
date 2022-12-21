@@ -9,7 +9,7 @@ const Info: React.FC = () => {
     <div className="relative mx-3 mb-10 flex max-w-[416px] items-center rounded sm:mx-0 xl:left-[70px] xl:mb-0">
       <div className="h-fit bg-primary py-12 px-8">
         <img
-          className="mx-auto mb-6 h-[100px] w-[100px] rounded-full border border-secondary"
+          className="mx-auto mb-6 h-[100px] w-[100px] rounded-full border-[3px] border-secondary"
           src={teacherData?.avatar}
           alt="avatar"
         />

@@ -7,7 +7,7 @@ const Result: React.FC = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="mx-3 rounded bg-dark p-6 md:max-w-[415px] md:py-12 md:px-8">
+    <div className="mx-3 h-fit rounded bg-dark p-6 md:max-w-[415px] md:py-12 md:px-8">
       <h2 className="fond-bold mb-12 flex place-content-center text-2xl font-bold text-white">
         <span className="material-icons mr-4 text-3xl text-secondary">
           verified
