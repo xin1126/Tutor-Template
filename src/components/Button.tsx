@@ -1,14 +1,18 @@
 interface Props {
   text: string
   padding: string
+  disabled?: boolean
   gradient?: boolean
   target?: boolean
+  block?: boolean // 手機版滿版
   onClick?: () => void
 }
 
 const Button: React.FC<Props> = (props) => {
-  const { text, padding, gradient, target, onClick } = props
+  const { text, padding, disabled, block, gradient, target, onClick } = props
   const colorStyle = () => {
+    if (disabled) return 'cursor-not-allowed border border-gray text-gray'
+
     if (gradient) {
       return 'bg-gradient-to-r from-gradual to-secondary hover:opacity-80'
     }
@@ -22,7 +26,8 @@ const Button: React.FC<Props> = (props) => {
     <>
       <button
         type="button"
-        className={`whitespace-nowrap rounded-lg text-white transition duration-700 ${colorStyle()} ${padding}`}
+        className={`whitespace-nowrap rounded-lg text-white transition duration-700 
+        ${colorStyle()} ${padding} ${block && 'w-full md:w-auto'}`}
         onClick={onClick}
       >
         {text}
