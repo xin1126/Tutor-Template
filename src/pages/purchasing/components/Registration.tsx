@@ -15,7 +15,12 @@ const Registration: React.FC = () => {
 
   const teacherData = courses.filter((item) => item.name === teacherName)[0]
 
-  const { setText } = useContext<Context>(FatherContext)
+  const { setSchedule, setInfo } = useContext<Context>(FatherContext)
+
+  const toPayment = () => {
+    setSchedule(2)
+    setInfo({ price, title: teacherData.title })
+  }
 
   const handlePrice = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPrice(e.target.value)
@@ -120,7 +125,7 @@ const Registration: React.FC = () => {
           padding="py-2 px-12"
           gradient={true}
           block={true}
-          onClick={() => setText(2)}
+          onClick={() => toPayment()}
         />
       </div>
     </div>
