@@ -1,14 +1,16 @@
 interface Props {
   title: string
   placeholder: string
+  verify?: any
   width?: string
   type?: string
 }
 
-const Input: React.FC<Props> = ({ title, placeholder, width, type }) => {
+const Input: React.FC<Props> = (props) => {
+  const { title, placeholder, width, type, verify } = props
   return (
     <>
-      <label className=" font-bold text-gray" htmlFor="grid-first-name">
+      <label className=" font-bold text-gray" htmlFor={title}>
         {title}
       </label>
       <input
@@ -18,8 +20,8 @@ const Input: React.FC<Props> = ({ title, placeholder, width, type }) => {
         `}
         placeholder={placeholder}
         type={type ? type : 'text'}
-        id="inputItemTitleEn"
-        required
+        id={title}
+        {...verify}
       />
     </>
   )

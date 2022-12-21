@@ -1,6 +1,7 @@
 interface Props {
   text: string
   padding: string
+  type?: string
   disabled?: boolean
   gradient?: boolean
   target?: boolean
@@ -25,7 +26,7 @@ const Button: React.FC<Props> = (props) => {
   return (
     <>
       <button
-        type="button"
+        type={props.type ? 'submit' : 'button'}
         className={`whitespace-nowrap rounded-lg text-white transition duration-700 
         ${colorStyle()} ${padding} ${block && 'w-full md:w-auto'}`}
         onClick={onClick}
