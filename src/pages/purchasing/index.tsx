@@ -2,6 +2,7 @@
 import Info from './components/Info'
 import Registration from './components/Registration'
 import Payment from './components/Payment'
+import Result from './components/Result'
 import { createContext } from 'react'
 import { useAppSelector } from '@/store/index'
 
@@ -45,8 +46,8 @@ const Purchasing: React.FC = () => {
           </div>
         )}
         {schedule === 2 && <Payment />}
+        {schedule === 3 && <Result />}
       </div>
-      {/* {schedule === 3 && <Registration />} */}
     </FatherContext.Provider>
   )
 }

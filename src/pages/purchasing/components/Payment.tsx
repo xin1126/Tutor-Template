@@ -6,7 +6,7 @@ const Payment: React.FC = () => {
   const { info, setSchedule } = useContext<Context>(FatherContext)
 
   return (
-    <div className="rounded bg-dark p-6 md:py-12 md:px-8">
+    <div className="mx-3 w-full rounded bg-dark p-6 md:w-auto md:py-12 md:px-8">
       <h2 className="fond-bold mb-12 text-center text-2xl font-bold text-white">
         信用卡付款
       </h2>
