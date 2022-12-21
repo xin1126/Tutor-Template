@@ -1,8 +1,13 @@
 import { FatherContext, Context } from '../index'
 import courses from '@/lib/courseData'
 import Button from '@/components/Button'
-import { setTeacherName } from '@/store/modules/course'
+import { setTeacherName, setCustomized } from '@/store/modules/course'
 import { useAppDispatch } from '@/store/index'
+
+interface Customized {
+  time: string
+  price: string
+}
 
 const Course: React.FC = () => {
   const { type } = useContext<Context>(FatherContext)
@@ -11,9 +16,13 @@ const Course: React.FC = () => {
 
   const dispatch = useAppDispatch()
 
-  const jumpCourseDetail = (name: string) => {
+  const jumpPage = (name: string, route: string, customized?: Customized) => {
+    if (customized) {
+      dispatch(setCustomized(customized))
+    }
+
     dispatch(setTeacherName(name))
-    navigate(`/courseDetail`)
+    navigate(route)
   }
 
   const newCourse = useMemo(() => {
@@ -53,7 +62,7 @@ const Course: React.FC = () => {
                     <Button
                       text="課程介紹"
                       padding="py-2 md:px-12 px-8"
-                      onClick={() => jumpCourseDetail(item.name)}
+                      onClick={() => jumpPage(item.name, '/courseDetail')}
                     />
                   </div>
                   <div>
@@ -61,6 +70,9 @@ const Course: React.FC = () => {
                       text="立即預約"
                       padding="py-2 md:px-12 px-8"
                       gradient={true}
+                      onClick={() =>
+                        jumpPage(item.name, '/purchasing', item.customized[0])
+                      }
                     ></Button>
                   </div>
                 </div>

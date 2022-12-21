@@ -1,8 +1,22 @@
 import courses from '@/lib/courseData'
-import { useAppSelector } from '@/store/index'
+import { useAppSelector, useAppDispatch } from '@/store/index'
+import { setCustomized } from '@/store/modules/course'
+
+interface Customized {
+  time: string
+  price: string
+}
 
 const Sidebar: React.FC = () => {
   const { teacherName } = useAppSelector((state) => state.course)
+
+  const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+
+  const jumpPurchasing = (item: Customized) => {
+    dispatch(setCustomized(item))
+    navigate('/purchasing')
+  }
 
   const teacherData = courses.filter((item) => item.name === teacherName)[0]
   return (
@@ -14,6 +28,7 @@ const Sidebar: React.FC = () => {
               <li
                 key={index}
                 className="group mb-4 flex cursor-pointer items-center justify-between border-b border-white pb-4 text-white"
+                onClick={() => jumpPurchasing(item)}
               >
                 <div className="group-hover:text-secondary">
                   <p className="text-2xl font-medium ">{item.price}</p>
