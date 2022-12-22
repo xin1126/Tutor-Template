@@ -25,62 +25,29 @@ const Payment: React.FC = () => {
           <Input
             title="信用卡帳號"
             placeholder="Xxxx-xxxx-xxxx-xxxx"
-            verify={{
-              ...register('account', {
-                validate: {
-                  required: (value) => value !== '',
-                  max: (value) => value.length === 12,
-                },
-              }),
-            }}
+            id="account"
+            verify={{ register, errors }}
+            limitLength={12}
           />
-          {errors.account?.type === 'required' && (
-            <p className="text-[red]">信用卡帳號為必填</p>
-          )}
-          {errors.account?.type === 'max' && (
-            <p className="text-[red]">信用卡帳號為十二數</p>
-          )}
         </div>
         <div className="mb-4 md:mb-6">
           <Input
             title="安全碼"
             placeholder="***"
+            id="securityCode"
             type="password"
-            verify={{
-              ...register('securityCode', {
-                validate: {
-                  required: (value) => value !== '',
-                  max: (value) => value.length === 3,
-                },
-              }),
-            }}
+            verify={{ register, errors }}
+            limitLength={3}
           />
-          {errors.securityCode?.type === 'required' && (
-            <p className="text-[red]">安全碼為必填</p>
-          )}
-          {errors.securityCode?.type === 'max' && (
-            <p className="text-[red]">安全碼為三位數</p>
-          )}
         </div>
         <div className="mb-4 md:mb-6">
           <Input
             title="有效日期"
             placeholder="(MM-YY)"
-            verify={{
-              ...register('date', {
-                validate: {
-                  required: (value) => value !== '',
-                  max: (value) => value.length === 4,
-                },
-              }),
-            }}
+            id="date"
+            verify={{ register, errors }}
+            limitLength={4}
           />
-          {errors.date?.type === 'required' && (
-            <p className="text-[red]">有效日期為必填</p>
-          )}
-          {errors.date?.type === 'max' && (
-            <p className="text-[red]">有效日期為四位數</p>
-          )}
         </div>
         <div className="items-center justify-between md:flex">
           <p className="mb-6 text-lg text-white md:mb-0">{info.price}</p>
