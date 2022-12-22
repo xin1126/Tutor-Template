@@ -2,7 +2,11 @@ import { NavLink, useLocation } from 'react-router-dom'
 import pcLogo from '@/assets/images/logo.svg'
 import mobileLogo from '@/assets/images/logo2.svg'
 
-const Header: React.FC = () => {
+interface Props {
+  handleModal: (status: boolean) => void
+}
+
+const Header: React.FC<Props> = ({ handleModal }) => {
   const [menuStatus, setMenuStatus] = useState(false)
   const navigate = useNavigate()
 
@@ -66,13 +70,16 @@ const Header: React.FC = () => {
             </NavLink>
           </li>
           <li className="flex items-center justify-center md:mb-0">
-            <NavLink
-              to="/"
+            <button
+              type="button"
               className="flex items-center hover:text-slate-300"
-              onClick={() => setMenuStatus(false)}
+              onClick={() => {
+                setMenuStatus(false)
+                handleModal(true)
+              }}
             >
               <span className="material-icons mr-1">account_circle</span>登入
-            </NavLink>
+            </button>
           </li>
         </ul>
       </div>

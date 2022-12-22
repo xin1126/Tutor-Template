@@ -6,10 +6,11 @@ interface Props {
   limitLength?: number
   width?: string
   type?: string
+  bg?: string
 }
 
 const Input: React.FC<Props> = (props) => {
-  const { title, placeholder, id, width, type, limitLength, verify } = props
+  const { title, placeholder, id, width, type, limitLength, verify, bg } = props
 
   const { register, errors } = verify
 
@@ -43,8 +44,9 @@ const Input: React.FC<Props> = (props) => {
       </label>
       <input
         className={`
-        mt-2 block w-full appearance-none rounded border border-gray bg-transparent py-2 px-4 leading-tight text-white focus:outline-none
+        mt-2 block w-full appearance-none rounded border border-gray py-2 px-4 leading-tight text-white focus:outline-none
         ${width !== 'full' && 'md:min-w-[330px]'}
+        ${bg || 'bg-transparent'}
         `}
         placeholder={placeholder}
         type={type ? type : 'text'}
